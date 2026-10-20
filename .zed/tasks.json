@@ -1,0 +1,54 @@
+[
+  {
+    "label": "configure",
+    "command": "pwsh",
+    "args": ["-NoProfile", "-File", "scripts/dev.ps1", "cmake", "--preset", "debug", "--fresh"],
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "configure release",
+    "command": "pwsh",
+    "args": ["-NoProfile", "-File", "scripts/dev.ps1", "cmake", "--preset", "release", "--fresh"],
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "build release",
+    "command": "pwsh",
+    "args": ["-NoProfile", "-File", "scripts/dev.ps1", "cmake", "--build", "--preset", "release"],
+    "save": "all",
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "build",
+    "command": "pwsh",
+    "args": ["-NoProfile", "-File", "scripts/dev.ps1", "cmake", "--build", "--preset", "debug"],
+    "save": "all",
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "run",
+    "command": "pwsh",
+    "args": ["-NoProfile", "-File", "scripts/dev.ps1", "cmake", "--build", "--preset", "debug", "--target", "run"],
+    "save": "all",
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "clean",
+    "command": "pwsh",
+    "args": ["-NoProfile", "-File", "scripts/dev.ps1", "cmake", "--build", "--preset", "debug", "--target", "clean"],
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "wipe build dir",
+    "command": "pwsh",
+    "args": ["-NoProfile", "-File", "scripts/dev.ps1", "cmake", "-E", "rm", "-rf", "build"],
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  }
+]
